@@ -71,7 +71,7 @@ are committed if a majority of the master-eligible nodes received the update cor
 to enough nodes in the cluster to continue to operate correctly. When the network partition heals, the isolated nodes catch
 up with the current state and receive the previously missed changes. However, if a second partition happens while the cluster
 is still recovering from the previous one *and* the old master falls on the minority side, it may be that a new master is elected
-which has not yet catch up. If that happens, cluster state updates can be lost.
+which has not yet caught up. If that happens, cluster state updates can be lost.
 
 This problem is mostly fixed by {GIT}20384[#20384] (v5.0.0), which takes committed cluster state updates into account during master
 election. This considerably reduces the chance of this rare problem occurring but does not fully mitigate it. If the second partition
